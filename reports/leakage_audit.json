@@ -1,0 +1,43 @@
+{
+  "checks": {
+    "customer_splits_disjoint": true,
+    "unique_raw_and_prepared_ids": true,
+    "all_original_labels_present": true,
+    "prepared_labels_equal_original": true,
+    "split_recomputes_without_target": true,
+    "no_explicit_target_or_split_in_features": true,
+    "test_scores_cover_only_test_customers": true,
+    "saved_test_labels_equal_original": true,
+    "metric_matches_independent_sklearn": true
+  },
+  "all_implementation_checks_passed": true,
+  "single_feature_P_2_last_auc": {
+    "test": 0.9157904213803978,
+    "train": 0.9152524924933313,
+    "valid": 0.9189672573751506
+  },
+  "overlap_counts": {
+    "train_valid": 0,
+    "train_test": 0,
+    "valid_test": 0
+  },
+  "forbidden_columns": [],
+  "split_bad_rates": {
+    "test": 0.2587945157855855,
+    "train": 0.25972754178272983,
+    "valid": 0.2566727003455652
+  },
+  "duplicate_aggregate_profiles": {
+    "duplicate_groups": 0,
+    "clients_in_duplicate_groups": 0,
+    "groups_crossing_splits": 0
+  },
+  "scratch_test_auc_recomputed_from_original_labels": 0.9585171300749272,
+  "scratch_test_gini_recomputed": 0.9170342601498545,
+  "limitations": [
+    "No original CSV for value-level verification of third-party preprocessing.",
+    "Anonymized feature availability cannot be semantically established from code alone.",
+    "Customer holdout is not temporal holdout; test has been viewed during previous research.",
+    "Duplicate profiles use a 64-bit screening hash; any matches require value-level investigation."
+  ]
+}

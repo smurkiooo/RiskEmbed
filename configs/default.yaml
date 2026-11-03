@@ -1,0 +1,58 @@
+seed: 42
+reports_dir: reports
+amex:
+  raw_dir: data/raw/amex
+  work_dir: data/amex
+  holdout_client_share: 0.4
+  shift_cutoff: '2018-01-01'
+  duckdb_memory: 4GB
+  duckdb_threads: 2
+  agg_chunks: 12
+  boosting:
+    num_boost_round: 1500
+    early_stopping_rounds: 50
+    params:
+      objective: binary
+      learning_rate: 0.08
+      num_leaves: 63
+      min_data_in_leaf: 200
+      feature_fraction: 0.3
+      bagging_fraction: 0.7
+      bagging_freq: 1
+      lambda_l2: 5.0
+      max_bin: 63
+      num_threads: 6
+      verbose: -1
+  bootstrap_reps: 200
+  encoder:
+    d_model: 64
+    n_heads: 4
+    n_layers: 2
+    emb_dim: 32
+    dropout: 0.1
+  pretrain:
+    epochs: 4
+    batch_size: 512
+    lr: 0.002
+    min_crop: 3
+    max_crop: 13
+    temperature: 0.1
+  variants:
+    coles_vicreg:
+      time_encoding: continuous
+      vicreg_var: 1.0
+      vicreg_cov: 1.0
+    coles_plain:
+      time_encoding: continuous
+      vicreg_var: 0.0
+      vicreg_cov: 0.0
+    positions_vicreg:
+      time_encoding: positions
+      vicreg_var: 1.0
+      vicreg_cov: 1.0
+  supervised:
+    epochs: 8
+    batch_size: 512
+    lr: 0.001
+    weight_decay: 0.01
+    patience: 2

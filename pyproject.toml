@@ -1,0 +1,42 @@
+[project]
+name = "riskembed"
+version = "0.1.0"
+description = "RiskEmbed-lite: ML и DL для предсказания дефолта по последовательностям выписок AmEx"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "pyarrow>=15",
+    "duckdb>=1.1",
+    "lightgbm>=4.3",
+    "torch>=2.3",
+    "pyyaml>=6",
+    "tabulate>=0.9",
+    "scikit-learn>=1.4",
+]
+
+[project.optional-dependencies]
+airflow = ["apache-airflow>=3.1,<4"]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "SIM", "C4", "RUF", "NPY", "PD", "PERF", "ARG", "PTH"]
+# RUF001-003: кириллица в строках и комментариях; E501: длинные f-строки отчётов
+ignore = ["E501", "RUF001", "RUF002", "RUF003", "PERF401", "PD101"]

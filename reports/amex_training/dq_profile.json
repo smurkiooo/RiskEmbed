@@ -1,0 +1,38 @@
+{
+  "rows": 5531451,
+  "customers": 458913,
+  "duplicate_customer_date": 0,
+  "null_dates": 0,
+  "min_date": "2017-03-01",
+  "max_date": "2018-03-31",
+  "positive_rate_in_sample": 0.2589336105100531,
+  "split_counts": {
+    "train": 275712,
+    "test": 92046,
+    "valid": 91155
+  },
+  "last_statement_month_counts": {
+    "2018-03": 458913
+  },
+  "columns_numeric": 177,
+  "columns_categorical": 11,
+  "null_share_top10": {
+    "D_87": 0.9993,
+    "D_88": 0.9989,
+    "D_108": 0.9948,
+    "D_111": 0.9943,
+    "D_110": 0.9943,
+    "B_39": 0.9939,
+    "D_73": 0.9899,
+    "B_42": 0.9871,
+    "D_134": 0.9648,
+    "D_135": 0.9648
+  },
+  "columns_null_share_gt_0.9": 18,
+  "checks": {
+    "customers_match_labels": true,
+    "no_duplicate_customer_date": true,
+    "no_null_dates": true,
+    "no_fully_null_columns": true
+  }
+}

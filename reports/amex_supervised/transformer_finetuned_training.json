@@ -1,0 +1,74 @@
+{
+  "encoder": {
+    "d_model": 64,
+    "n_heads": 4,
+    "n_layers": 2,
+    "emb_dim": 32,
+    "dropout": 0.1
+  },
+  "pretrained": true,
+  "seed": 42,
+  "labels_sha256": "02a06fb8731d04294c227c198e19d44e61e66f32de36b840d5dc00e9a47bc4b7",
+  "vocab_sha256": "c0a03c18c748cd0e08eaa3a9d0b160c381b11a5867de372b5224d32bfe21a193",
+  "config": {
+    "epochs": 8,
+    "batch_size": 512,
+    "lr": 0.001,
+    "encoder_lr_mult": 0.3,
+    "weight_decay": 0.01,
+    "patience": 2,
+    "seed": 42
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_bce": 0.28233332803322414,
+      "valid_auc": 0.9519352855254547,
+      "seconds": 74.73
+    },
+    {
+      "epoch": 2,
+      "train_bce": 0.2461215412605661,
+      "valid_auc": 0.9553302690123595,
+      "seconds": 74.71
+    },
+    {
+      "epoch": 3,
+      "train_bce": 0.23850916446417486,
+      "valid_auc": 0.9570370501236596,
+      "seconds": 76.79
+    },
+    {
+      "epoch": 4,
+      "train_bce": 0.2345342601795604,
+      "valid_auc": 0.9575269207353101,
+      "seconds": 79.96
+    },
+    {
+      "epoch": 5,
+      "train_bce": 0.2321624119827453,
+      "valid_auc": 0.9580018976393242,
+      "seconds": 71.76
+    },
+    {
+      "epoch": 6,
+      "train_bce": 0.230273269151468,
+      "valid_auc": 0.9582706548979764,
+      "seconds": 69.85
+    },
+    {
+      "epoch": 7,
+      "train_bce": 0.228521837995577,
+      "valid_auc": 0.958810635457252,
+      "seconds": 78.97
+    },
+    {
+      "epoch": 8,
+      "train_bce": 0.2271618855807553,
+      "valid_auc": 0.9587173923255837,
+      "seconds": 97.83
+    }
+  ],
+  "best_epoch": 7,
+  "best_valid_auc": 0.958810635457252
+}

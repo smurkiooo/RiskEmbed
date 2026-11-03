@@ -1,0 +1,25 @@
+{
+  "mode": "control_subset",
+  "source": "full",
+  "clients": 13883,
+  "runs": [
+    {
+      "seed": 7,
+      "validation_auc": 0.5092623355865001,
+      "test_auc": 0.4979814770020006
+    },
+    {
+      "seed": 42,
+      "validation_auc": 0.526301626438021,
+      "test_auc": 0.48412988840579413
+    },
+    {
+      "seed": 101,
+      "validation_auc": 0.4850040380842836,
+      "test_auc": 0.5205456559028186
+    }
+  ],
+  "mean_test_auc": 0.5008856737702044,
+  "interpretation": "Labels are independently permuted within all splits. Near 0.5 supports a functional negative control.",
+  "limitation": "This does not rule out original-feature proxies for future outcomes or establish temporal generalization."
+}
